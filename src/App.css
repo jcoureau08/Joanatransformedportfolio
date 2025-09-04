@@ -1,0 +1,259 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  text-align: center;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+.navbar.responsive {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar.responsive a {
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f4f4;
+}
+
+#typewriter {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+
+/* Button */
+#theme-toggle {
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background-color: #007acc;
+}
+
+/* Carousel */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carousel-slide {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.carousel-slide .card {
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.carousel-slide .card img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-slide .card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-btn {
+  background-color: #007acc;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #005fa3;
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.contact-form button {
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+body.dark-mode .hero {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode #theme-toggle {
+  background-color: #ddd;
+  color: #111;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea,
+body.dark-mode .carousel-slide .card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #999;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .navbar a:not(:first-child) { display: none; }
+  .navbar a.icon { display: block; position: absolute; right: 10px; top: 10px; }
+
+  .navbar.responsive a { display: block; }
+  #typewriter { font-size: 1.3rem; }
+
+  .carousel-slide .card { min-width: 90%; }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .carousel-slide .card { min-width: 45%; }
+}
+
+@media screen and (min-width: 901px) {
+  .carousel-slide .card { min-width: 28%; }
+}
